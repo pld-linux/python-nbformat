@@ -1,7 +1,7 @@
 #
 # Conditional build:
 %bcond_without	doc	# Sphinx documentation
-%bcond_with	tests	# unit tests (waiting for fulfilling dependencies in PLD)
+%bcond_without	tests	# unit tests
 %bcond_without	python2 # CPython 2.x module
 %bcond_without	python3 # CPython 3.x module
 
@@ -15,6 +15,7 @@ Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/nbformat/
 Source0:	https://files.pythonhosted.org/packages/source/n/nbformat/nbformat-%{version}.tar.gz
 # Source0-md5:	2d5f873138d9fbc2a3f9eaaebca3b8a1
+Patch0:		%{name}-use_setuptools.patch
 URL:		https://pypi.org/project/nbformat/
 %if %{with python2}
 BuildRequires:	python-modules >= 1:2.7
@@ -88,6 +89,7 @@ Dokumentacja API modułu Pythona nbformat.
 
 %prep
 %setup -q -n nbformat-%{version}
+%patch0 -p1
 
 %build
 %if %{with python2}
