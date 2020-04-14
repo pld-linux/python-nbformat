@@ -1,13 +1,15 @@
+# NOTE: for versions >= 5.0 (for python 3.5+) see python3-nbformat.spec
 #
 # Conditional build:
 %bcond_without	doc	# Sphinx documentation
 %bcond_without	tests	# unit tests
 %bcond_without	python2 # CPython 2.x module
-%bcond_without	python3 # CPython 3.x module
+%bcond_with	python3 # CPython 3.x module (built from python3-nbformat.spec)
 
 Summary:	The Jupyter Notebook Format
 Summary(pl.UTF-8):	Format Jupyter Notebook
 Name:		python-nbformat
+# keep 4.x here for python2 support
 Version:	4.4.0
 Release:	3
 License:	BSD
