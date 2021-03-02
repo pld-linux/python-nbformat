@@ -11,7 +11,7 @@ Summary(pl.UTF-8):	Format Jupyter Notebook
 Name:		python-nbformat
 # keep 4.x here for python2 support
 Version:	4.4.0
-Release:	3
+Release:	4
 License:	BSD
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/nbformat/
